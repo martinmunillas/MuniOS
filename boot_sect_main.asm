@@ -1,34 +1,26 @@
-[org 0x7c00] ; tell the assembler that our offset is bootsector code
+[org 0x7c00] ; bootloader offset
+    mov bp, 0x9000 ; set the stack
+    mov sp, bp
 
-; The main routine makes sure the parameters are ready and then calls the function
-mov bx, HELLO
-call print
+    mov bx, MSG_REAL_MODE
+    call print ; This will be written after the BIOS messages
 
-call print_nl
+    call switch_to_pm
 
-mov bx, GOODBYE
-call print
-
-call print_nl
-
-mov dx, 0x12fe
-call print_hex
-
-; that's it! we can hang now
-jmp $
-
-; remember to include subroutines below the hang
 %include "boot_sect_print.asm"
-%include "boot_sect_print_hex.asm"
+%include "32bit_gdt.asm"
+%include "32bit_print.asm"
+%include "32bit_switch.asm"
 
+[bits 32]
+BEGIN_PM: ; after the switch we will get here
+    mov ebx, MSG_PROT_MODE
+    call print_string_pm ; Note that this will be written at the top left corner
+    jmp $
 
-; data
-HELLO:
-    db 'Hello, World', 0
+MSG_REAL_MODE db "Started in 16-bit real mode", 0
+MSG_PROT_MODE db "Loaded 32-bit protected mode", 0
 
-GOODBYE:
-    db 'Goodbye', 0
-
-; padding and magic number
+; bootsector
 times 510-($-$$) db 0
 dw 0xaa55
