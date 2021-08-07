@@ -1,10 +1,6 @@
-PROGRAM_SPACE equ 0x7c00
+PROGRAM_SPACE equ 0x7e00
 
 read_disk:
-
-    mov bx, came
-    call print_string
-
     mov ah, 0x2
     mov bx, PROGRAM_SPACE
     mov al, 1
@@ -13,10 +9,6 @@ read_disk:
     mov dh, 0x0
     mov cl, 0x2
     int 0x13
-
-    mov bx, came
-    call print_string
-
 
     jc disk_error
     
@@ -31,8 +23,5 @@ disk_error:
 boot_disk:
     db 0
 
-
-came:
-    db 'Out of reading', 0
 disk_error_msg:
     db 'There was an error trying to read the disk', 0

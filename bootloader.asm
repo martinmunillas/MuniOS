@@ -10,6 +10,7 @@ call read_disk
 jmp PROGRAM_SPACE
 
 %include "print_string.asm"
+%include "print_hex.asm"
 %include "disk_read.asm"
 
 times 510-($-$$) db 0
