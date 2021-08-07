@@ -1,4 +1,4 @@
 nasm bootloader.asm -f bin -o build/bootloader.bin
-nasm sector_test.asm -f bin -o build/sector_test.bin
-cat build/bootloader.bin build/sector_test.bin > build/bootloader.flp
-rm build/bootloader.bin build/sector_test.bin
+nasm kernel_entry.asm -f bin -o build/kernel_entry.bin
+cat build/bootloader.bin build/kernel_entry.bin > build/bootloader.flp
+rm build/bootloader.bin build/kernel_entry.bin
