@@ -1,10 +1,11 @@
-[org 0x7e00]
+jmp enter_protected_mode
 
-mov bx, welcome_msg
-call print_string
-
-
+%include "gdt.asm"
+%include "print_string.asm"
 enter_protected_mode:
+    mov bx, welcome_msg
+    call print_string
+
     call enableA20
     cli
     lgdt [gdt_descriptor]
@@ -14,9 +15,6 @@ enter_protected_mode:
 
     jmp codeseg:start_protected_mode
 
-%include "gdt.asm"
-%include "print_string.asm"
-%include "print_hex.asm"
 
 enableA20:
     in al, 0x92
@@ -56,10 +54,14 @@ start_protected_mode:
     jmp codeseg:start_64bit
 
 [bits 64]
+[extern _start]
+
 start_64bit:
     mov edi, 0xb8000
-    mov rax, 0xe520e520e520e520
+    mov rax, 0xe120e120e120e120
     mov ecx, 500
     rep stosq
+    call _start
     jmp $
+
 times 2048-($-$$) db 0
