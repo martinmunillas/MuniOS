@@ -58,7 +58,7 @@ start_protected_mode:
 [bits 64]
 start_64bit:
     mov edi, 0xb8000
-    mov rax, 0x1f201f201f201f20
+    mov rax, 0xe520e520e520e520
     mov ecx, 500
     rep stosq
     jmp $
