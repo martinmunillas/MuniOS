@@ -56,6 +56,8 @@ start_protected_mode:
 [bits 64]
 [extern _start]
 
+%include "../utils/IDT.asm"
+
 start_64bit:
     mov edi, 0xb8000
     mov rax, 0xe020e020e020e020
