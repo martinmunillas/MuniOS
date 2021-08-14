@@ -1,7 +1,7 @@
 jmp enter_protected_mode
 
-%include "gdt.asm"
-%include "print_string.asm"
+%include "./gdt.asm"
+%include "../utils/print_string.asm"
 enter_protected_mode:
     mov bx, welcome_msg
     call print_string
