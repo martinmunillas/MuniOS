@@ -3,6 +3,6 @@
 extern "C" void _start()
 {
     setCursorPosition(positionFromCoords(0, 0));
-    printString("Hello World");
+    printString("\n\r Hello World\n\r\n\r Welcome To MuniOS");
     return;
 };
