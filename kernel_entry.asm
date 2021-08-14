@@ -61,7 +61,7 @@ start_64bit:
     mov rax, 0xe120e120e120e120
     mov ecx, 500
     rep stosq
-    call _start
+    ; call _start
     jmp $
 
 times 2048-($-$$) db 0
