@@ -58,10 +58,8 @@ start_protected_mode:
 
 start_64bit:
     mov edi, 0xb8000
-    mov rax, 0xe120e120e120e120
+    mov rax, 0xe020e020e020e020
     mov ecx, 500
     rep stosq
-    ; call _start
+    call _start
     jmp $
-
-times 2048-($-$$) db 0

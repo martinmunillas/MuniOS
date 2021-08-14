@@ -20,3 +20,16 @@ uint16 positionFromCoords(uint8 x, uint8 y)
 {
     return y * VGA_WIDTH + x;
 }
+
+void printString(const char *str)
+{
+    uint8 *charPtr = (uint8 *)str;
+    uint16 index = cursorPosition;
+    while (*charPtr != 0)
+    {
+        *(VGA_MEMORY + index * 2) = *charPtr;
+        charPtr++;
+        index++;
+    }
+    setCursorPosition(index);
+}

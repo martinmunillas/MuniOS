@@ -2,6 +2,7 @@
 
 extern "C" void _start()
 {
-    setCursorPosition(positionFromCoords(12, 18));
+    setCursorPosition(positionFromCoords(0, 0));
+    printString("Hello World");
     return;
-}
+};
