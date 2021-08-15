@@ -8,12 +8,12 @@
 
 struct IDT64
 {
-    uint16 offset_low;
+    uint16 offsetLow;
     uint16 selector;
     uint8 ist;
-    uint8 types_attr;
-    uint16 offset_mid;
-    uint32 offset_high;
+    uint8 typesAttr;
+    uint16 offsetMid;
+    uint32 offsetHigh;
     uint32 zero;
 };
 
@@ -24,12 +24,12 @@ extern "C" void load_idt();
 void initializeIDT()
 {
     _idt[1].zero = 0;
-    _idt[1].offset_low = (uint16)((uint64)&isr1 & 0xffff);
-    _idt[1].offset_low = (uint16)(((uint64)&isr1 & 0xffff0000) >> 16);
-    _idt[1].offset_high = (uint32)(((uint64)&isr1 & 0xffffffff00000000) >> 32);
+    _idt[1].offsetLow = (uint16)((uint64)&isr1 & 0xffff);
+    _idt[1].offsetMid = (uint16)(((uint64)&isr1 & 0xffff0000) >> 16);
+    _idt[1].offsetHigh = (uint32)(((uint64)&isr1 & 0xffffffff00000000) >> 32);
     _idt[1].ist = 0;
     _idt[1].selector = 0x8;
-    _idt[1].types_attr = 0x8e;
+    _idt[1].typesAttr = 0x8e;
 
     remapPic();
 
@@ -42,7 +42,6 @@ void (*mainKeyboardHandler)(uint8 scanCide, uint8 chr);
 
 extern "C" void isr1Handler()
 {
-    printString(hexToString(inb(0x60)));
     uint8 scanCode = inb(0x60);
     uint8 chr = 0;
     if (scanCode < 0x3a)
