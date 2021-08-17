@@ -12,6 +12,12 @@ extern "C" void _start()
     printString(WelcomeText);
     initializeIDT();
     mainKeyboardHandler = KeyboardHandler;
-    setCursorPosition(positionFromCoords(1, 3));
-    printString(intToString(memory_region_count));
-};
+
+    MemoryMapEntry **usableMemoryMaps = getUsableMemoryRegions();
+
+    for (int i = 0; i < usableMemoryRegionCount; i++)
+    {
+        MemoryMapEntry *memMap = usableMemoryMaps[i];
+        printMemoryMap(memMap);
+    }
+}
