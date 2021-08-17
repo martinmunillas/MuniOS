@@ -2,3 +2,4 @@ build/*
 !*.gitkeep
 *.o
 *.bin
+.vscode/

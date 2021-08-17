@@ -2,8 +2,7 @@
 #include "typeDefs.cpp"
 #include "IO.cpp"
 #include "textPrint.cpp"
-#include "hexToString.cpp"
-#include "numberToString.cpp"
+#include "./parsers/hexToString.cpp"
 #include "KeyboardScanCodeSet1.cpp"
 
 struct IDT64

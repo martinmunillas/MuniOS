@@ -1,6 +1,6 @@
-#include "typeDefs.cpp"
+#include "../typeDefs.cpp"
 
-char hexToStringOutput[128];
+char hexOutput[128];
 template <typename T>
 const char *hexToString(T value)
 {
@@ -13,11 +13,11 @@ const char *hexToString(T value)
     {
         ptr = ((uint8 *)valPtr + i);
         tmp = ((*ptr & 0xf0) >> 4);
-        hexToStringOutput[size - (i * 2 + 1)] = tmp + (tmp > 9 ? 55 : 48);
+        hexOutput[size - (i * 2 + 1)] = tmp + (tmp > 9 ? 55 : 48);
         tmp = ((*ptr & 0x0f));
-        hexToStringOutput[size - (i * 2 + 0)] = tmp + (tmp > 9 ? 55 : 48);
+        hexOutput[size - (i * 2 + 0)] = tmp + (tmp > 9 ? 55 : 48);
     }
 
-    hexToStringOutput[size + 1] = 0;
-    return hexToStringOutput;
+    hexOutput[size + 1] = 0;
+    return hexOutput;
 }
