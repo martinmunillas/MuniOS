@@ -32,4 +32,4 @@ x86_64-elf-ld -T"link.ld"
 
 cat build/bootloader.bin build/kernel.bin > build/munios.flp
 
-# rm build/bootloader.bin build/kernel.bin build/kernel.o build/kernel_entry.o build/binaries.o
+rm build/*.bin build/*.o
