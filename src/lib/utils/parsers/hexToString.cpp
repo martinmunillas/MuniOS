@@ -21,3 +21,12 @@ const char *hexToString(T value)
     hexOutput[size + 1] = 0;
     return hexOutput;
 }
+
+const char *hexToString(uint8 value) { return hexToString<uint8>(value); }
+const char *hexToString(uint16 value) { return hexToString<uint16>(value); }
+const char *hexToString(uint32 value) { return hexToString<uint32>(value); }
+const char *hexToString(uint64 value) { return hexToString<uint64>(value); }
+const char *hexToString(char value) { return hexToString<char>(value); }
+const char *hexToString(short value) { return hexToString<short>(value); }
+const char *hexToString(int value) { return hexToString<int>(value); }
+const char *hexToString(long value) { return hexToString<long>(value); }
