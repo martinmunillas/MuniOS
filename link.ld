@@ -5,7 +5,19 @@ ENTRY (_start)
 INPUT
 (
     build/kernel_entry.o
+    
     build/kernel.o
+    build/keyboard.o
+    build/memoryMap.o
+
+    build/IDT.o
+    build/IO.o
+    build/textPrint.o
+
+    build/intToString.o
+    build/floatToString.o
+    build/hexToString.o
+
     build/binaries.o
 )
 

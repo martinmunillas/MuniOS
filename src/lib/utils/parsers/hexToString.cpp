@@ -1,4 +1,4 @@
-#include "../typeDefs.cpp"
+#include "hexToString.h"
 
 char hexOutput[128];
 template <typename T>

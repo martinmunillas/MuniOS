@@ -1,5 +1,4 @@
-#include "../utils/typeDefs.cpp"
-#include "../utils/textPrint.cpp"
+#include "keyboard.h"
 
 bool shiftPressed = 0;
 uint8 lastScanCode;

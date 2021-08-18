@@ -1,20 +1,4 @@
-#pragma once
-#include "typeDefs.cpp"
-#include "IO.cpp"
-#include "textPrint.cpp"
-#include "./parsers/hexToString.cpp"
-#include "KeyboardScanCodeSet1.cpp"
-
-struct IDT64
-{
-    uint16 offsetLow;
-    uint16 selector;
-    uint8 ist;
-    uint8 typesAttr;
-    uint16 offsetMid;
-    uint32 offsetHigh;
-    uint32 zero;
-};
+#include "IDT.h"
 
 extern IDT64 _idt[256];
 extern uint64 isr1;

@@ -1,7 +1,7 @@
-#pragma once
-#include "../typeDefs.cpp"
+#include "intToString.h"
 
 char intOutput[128];
+
 template <typename T>
 char *intToString(T value)
 {

@@ -1,8 +1,8 @@
-#include "../utils/textPrint.cpp"
-#include "../utils/parsers/intToString.cpp"
-#include "../utils/IDT.cpp"
-#include "keyboard.cpp"
-#include "memoryMap.cpp"
+#include "../utils/textPrint.h"
+#include "../utils/parsers/intToString.h"
+#include "../utils/IDT.h"
+#include "keyboard.h"
+#include "memoryMap.h"
 
 extern const char WelcomeText[];
 

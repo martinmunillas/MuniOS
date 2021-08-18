@@ -1,8 +1,7 @@
-#include "../typeDefs.cpp"
-#include "intToString.cpp"
+#include "floatToString.h"
 
 char floatOutput[128];
-const char *floatToString(float value, uint8 decimalPlaces = 1)
+const char *floatToString(float value, uint8 decimalPlaces)
 {
     char *intPtr = (char *)intToString((int)value);
     char *floatPtr = floatOutput;

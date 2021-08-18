@@ -1,9 +1,4 @@
-#pragma once
-#include "IO.cpp"
-#include "typeDefs.cpp"
-#include "textModeColorCodes.cpp"
-#define VGA_MEMORY (uint8 *)0xb8000
-#define VGA_WIDTH 80
+#include "textPrint.h"
 
 uint16 cursorPosition;
 
@@ -22,7 +17,7 @@ uint16 positionFromCoords(uint8 x, uint8 y)
     return y * VGA_WIDTH + x;
 }
 
-void printString(const char *str, uint8 color = BACKGROUND_BLINKINGYELLOW | FOREGROUND_BLACK)
+void printString(const char *str, uint8 color)
 {
     uint8 *charPtr = (uint8 *)str;
     uint16 index = cursorPosition;
@@ -48,14 +43,14 @@ void printString(const char *str, uint8 color = BACKGROUND_BLINKINGYELLOW | FORE
     setCursorPosition(index);
 }
 
-void printChar(char chr, uint8 color = BACKGROUND_BLINKINGYELLOW | FOREGROUND_BLACK)
+void printChar(char chr, uint8 color)
 {
     *(VGA_MEMORY + cursorPosition * 2) = chr;
     *(VGA_MEMORY + cursorPosition * 2 + 1) = color;
     setCursorPosition(cursorPosition + 1);
 }
 
-void clearScreen(uint64 color = BACKGROUND_BLINKINGYELLOW | FOREGROUND_BLACK)
+void clearScreen(uint64 color)
 {
     uint64 value = 0;
     value += color << 8;
