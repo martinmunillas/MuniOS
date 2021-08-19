@@ -1,4 +1,4 @@
-#include "IDT.h"
+#include "IDT.hpp"
 
 extern IDT64 _idt[256];
 extern uint64 isr1;

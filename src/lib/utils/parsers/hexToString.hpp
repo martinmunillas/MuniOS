@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../include/typeDefs.h"
+#include "../../../include/typeDefs.hpp"
 
 const char *hexToString(uint8 value);
 const char *hexToString(uint16 value);

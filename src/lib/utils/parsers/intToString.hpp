@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../include/typeDefs.h"
+#include "../../../include/typeDefs.hpp"
 
 const char *intToString(uint8 value);
 const char *intToString(uint16 value);

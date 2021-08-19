@@ -1,4 +1,4 @@
-#include "hexToString.h"
+#include "hexToString.hpp"
 
 char hexOutput[128];
 template <typename T>

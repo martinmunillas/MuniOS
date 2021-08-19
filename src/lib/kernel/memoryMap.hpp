@@ -1,7 +1,7 @@
 #pragma once
-#include "../../include/typeDefs.h"
-#include "../utils/textPrint.h"
-#include "../utils/parsers/intToString.h"
+#include "../../include/typeDefs.hpp"
+#include "../utils/textPrint.hpp"
+#include "../utils/parsers/intToString.hpp"
 
 struct MemoryMapEntry
 {

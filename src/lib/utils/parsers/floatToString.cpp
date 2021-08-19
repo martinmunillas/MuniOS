@@ -1,4 +1,4 @@
-#include "floatToString.h"
+#include "floatToString.hpp"
 
 char floatOutput[128];
 const char *floatToString(float value, uint8 decimalPlaces)

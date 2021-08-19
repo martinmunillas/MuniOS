@@ -1,4 +1,4 @@
-#include "keyboard.h"
+#include "keyboard.hpp"
 
 bool shiftPressed = 0;
 uint8 lastScanCode;

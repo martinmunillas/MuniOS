@@ -1,9 +1,9 @@
 #pragma once
-#include "../../include/typeDefs.h"
-#include "IO.h"
-#include "textPrint.h"
-#include "./parsers/hexToString.h"
-#include "../../include/KeyboardScanCodeSet1.h"
+#include "../../include/typeDefs.hpp"
+#include "IO.hpp"
+#include "textPrint.hpp"
+#include "./parsers/hexToString.hpp"
+#include "../../include/KeyboardScanCodeSet1.hpp"
 
 struct IDT64
 {

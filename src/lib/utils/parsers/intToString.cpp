@@ -1,4 +1,4 @@
-#include "intToString.h"
+#include "intToString.hpp"
 
 char intOutput[128];
 

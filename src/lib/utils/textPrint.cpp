@@ -1,4 +1,4 @@
-#include "textPrint.h"
+#include "textPrint.hpp"
 
 uint16 cursorPosition;
 

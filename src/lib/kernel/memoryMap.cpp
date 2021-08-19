@@ -1,4 +1,4 @@
-#include "memoryMap.h"
+#include "memoryMap.hpp"
 
 uint8 usableMemoryRegionCount = 0;
 
