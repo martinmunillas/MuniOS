@@ -9,6 +9,8 @@ INPUT
     build/kernel.o
     build/keyboard.o
     build/memoryMap.o
+    build/heap.o
+    build/memory.o
 
     build/IDT.o
     build/IO.o

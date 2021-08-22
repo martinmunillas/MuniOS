@@ -11,6 +11,10 @@ x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "keyboard.cpp"
 
 x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "memoryMap.cpp" -o "../../../build/memoryMap.o"
 
+x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "heap.cpp" -o "../../../build/heap.o"
+
+x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "memory.cpp" -o "../../../build/memory.o"
+
 cd ../utils/
 
 x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "IDT.cpp" -o "../../../build/IDT.o"
